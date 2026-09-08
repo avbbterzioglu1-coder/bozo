@@ -1,0 +1,11 @@
+<svg viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Süresiz nafaka makalesi görseli">
+  <rect width="1200" height="360" fill="#111d2e"/>
+  <circle cx="980" cy="90" r="240" fill="#a9873f" opacity="0.08"/>
+  <circle cx="120" cy="300" r="180" fill="#a9873f" opacity="0.06"/>
+  <g transform="translate(600,180)" stroke="#c8a765" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M-70,-95 L70,-95 L70,-72 L12,0 L70,72 L70,95 L-70,95 L-70,72 L-12,0 L-70,-72 Z"/>
+    <path d="M-42,-80 L42,-80 L6,-14 L-6,-14 Z" fill="#c8a765" opacity="0.35" stroke="none"/>
+    <path d="M-46,80 L46,80 L46,58 L-46,58 Z" fill="#c8a765" opacity="0.5" stroke="none"/>
+    <line x1="0" y1="-10" x2="0" y2="18" stroke="#c8a765" stroke-width="3"/>
+  </g>
+</svg>
