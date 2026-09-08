@@ -102,6 +102,14 @@ section{padding:80px 24px;}
 }
 .rule{width:40px;height:2px;background:var(--gold);margin:0 auto 20px;}
 
+/* Practice areas — home page: titles only */
+.areas-list{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 40px;max-width:900px;margin:0 auto;}
+.areas-list a{
+  display:block;padding:16px 0;border-bottom:1px solid var(--line);
+  font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);transition:color .2s;
+}
+.areas-list a:hover{color:var(--gold);}
+
 /* Practice areas */
 .areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 36px;max-width:1000px;margin:0 auto;}
 .area-card{padding-top:18px;border-top:1px solid var(--line);}
@@ -208,6 +216,7 @@ footer .foot-links a:hover{color:var(--gold-soft);}
   nav ul li a{display:block;padding:16px 24px;}
   .nav-toggle{display:block;}
   .areas-grid{grid-template-columns:1fr;}
+  .areas-list{grid-template-columns:1fr;}
   .principles-grid{grid-template-columns:1fr;gap:28px;}
   .contact-grid{grid-template-columns:1fr;}
   .hero h1{font-size:1.7rem;}
