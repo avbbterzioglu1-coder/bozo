@@ -48,8 +48,15 @@ nav a.active{color:var(--gold);}
   color:var(--white);
   padding:110px 24px 100px;
   text-align:center;
+  position:relative;
+  overflow:hidden;
 }
-.hero-inner{max-width:640px;margin:0 auto;}
+.hero-watermark{
+  position:absolute;top:50%;right:-60px;transform:translateY(-50%);
+  height:380px;width:auto;opacity:0.06;filter:brightness(0) invert(1);
+  pointer-events:none;
+}
+.hero-inner{position:relative;max-width:640px;margin:0 auto;}
 .kicker{
   display:inline-block;font-size:.75rem;letter-spacing:2.5px;text-transform:uppercase;
   color:var(--gold-soft);margin-bottom:20px;font-weight:600;
@@ -193,4 +200,5 @@ footer .foot-links a:hover{color:var(--gold-soft);}
   .contact-grid{grid-template-columns:1fr;}
   .hero h1{font-size:1.7rem;}
   .page-hero h1{font-size:1.5rem;}
+  .hero-watermark{height:220px;right:-40px;}
 }
