@@ -234,7 +234,7 @@ section{padding:80px 24px;}
 .makale-card h3 a:hover{color:var(--gold);}
 .makale-card p{color:var(--ink-soft);font-size:.94rem;}
 
-.article-banner{width:100%;height:auto;display:block;}
+.article-banner{width:100%;height:260px;object-fit:cover;display:block;}
 .article-wrap{max-width:700px;margin:0 auto;padding:48px 24px 0;}
 .article-wrap .makale-tag{margin-bottom:14px;}
 .article-wrap h1{font-size:1.7rem;margin-bottom:10px;line-height:1.35;}
@@ -266,4 +266,5 @@ footer .foot-links a:hover{color:var(--gold-soft);}
   .hero h1{font-size:1.7rem;}
   .page-hero h1{font-size:1.5rem;}
   .hero-watermark{height:220px;right:-40px;}
+  .article-banner{height:170px;}
 }
