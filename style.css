@@ -43,7 +43,7 @@ nav a:hover{color:var(--gold);}
 nav a.active{color:var(--gold);}
 .lang-switch{display:flex;align-items:center;gap:0;font-size:.72rem;font-weight:700;letter-spacing:.4px;}
 .lang-switch a{padding:4px 7px;color:var(--ink-soft);transition:color .2s;}
-.lang-switch a+a{border-left:1px solid var(--line);}
+.lang-switch a+a{border-inline-start:1px solid var(--line);}
 .lang-switch a:hover{color:var(--gold);}
 .lang-switch a.active{color:var(--gold);}
 .nav-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--navy);cursor:pointer;}
@@ -89,7 +89,7 @@ nav a.active{color:var(--gold);}
 }
 .btn-primary{background:var(--gold);color:var(--navy-deep);border-color:var(--gold);}
 .btn-primary:hover{background:var(--gold-soft);border-color:var(--gold-soft);}
-.btn-ghost{background:transparent;color:var(--white);margin-left:12px;border-color:rgba(255,255,255,0.4);}
+.btn-ghost{background:transparent;color:var(--white);margin-inline-start:12px;border-color:rgba(255,255,255,0.4);}
 .btn-ghost:hover{border-color:var(--gold-soft);color:var(--gold-soft);}
 .btn-dark{border-color:var(--navy);color:var(--navy);background:transparent;}
 .btn-dark:hover{background:var(--navy);color:var(--white);}
@@ -151,10 +151,10 @@ section{padding:80px 24px;}
 .area-detail p{color:var(--ink-soft);margin-bottom:12px;font-size:.97rem;}
 .area-detail ul{margin-top:10px;}
 .area-detail ul li{
-  color:var(--ink-soft);font-size:.94rem;padding-left:20px;position:relative;margin-bottom:8px;
+  color:var(--ink-soft);font-size:.94rem;padding-inline-start:20px;position:relative;margin-bottom:8px;
 }
 .area-detail ul li::before{
-  content:"–";position:absolute;left:0;color:var(--gold);
+  content:"–";position:absolute;inset-inline-start:0;color:var(--gold);
 }
 
 /* Working principles */
@@ -238,9 +238,9 @@ section{padding:80px 24px;}
 .makale-tag{
   display:inline-block;font-size:.66rem;letter-spacing:1.2px;text-transform:uppercase;
   color:var(--gold);font-weight:700;background:#fbf7ec;border:1px solid var(--gold-soft);
-  padding:3px 9px;border-radius:2px;margin-bottom:10px;margin-right:6px;
+  padding:3px 9px;border-radius:2px;margin-bottom:10px;margin-inline-end:6px;
 }
-.makale-date{font-size:.8rem;color:var(--ink-soft);margin-left:10px;}
+.makale-date{font-size:.8rem;color:var(--ink-soft);margin-inline-start:10px;}
 .makale-card h3{font-size:1.2rem;margin-bottom:8px;}
 .makale-card h3 a:hover{color:var(--gold);}
 .makale-card p{color:var(--ink-soft);font-size:.94rem;}
@@ -282,3 +282,24 @@ footer .foot-links a:hover{color:var(--gold-soft);}
   .hero-watermark{height:220px;right:-40px;}
   .article-banner{height:170px;}
 }
+
+/* Arabic (RTL) — Arabic script doesn't take letter-spacing/uppercase well */
+html[lang="ar"] body,
+html[lang="ar"] input,
+html[lang="ar"] textarea,
+html[lang="ar"] button{font-family:'Cairo','Inter',sans-serif;}
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4{font-family:'Noto Kufi Arabic','Playfair Display',serif;}
+html[lang="ar"] .brand-text,
+html[lang="ar"] .brand-text strong,
+html[lang="ar"] .lang-switch,
+html[lang="ar"] .kicker,
+html[lang="ar"] .hero h1 .hero-sub,
+html[lang="ar"] .makale-tag,
+html[lang="ar"] .makale-date,
+html[lang="ar"] .contact-row div strong,
+html[lang="ar"] .news-date{letter-spacing:normal;text-transform:none;}
+html[lang="ar"] .about-text p,
+html[lang="ar"] .article-body p{hyphens:none;}
