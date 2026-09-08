@@ -88,11 +88,13 @@
       <p>2026 yılında güncellenen trafik idari para cezaları ve zorunlu trafik sigortası prim artışı hakkında bilmeniz gerekenler.</p>
     </article>
 
-    <article class="makale-card" data-category="icra-iflas">
+    <article class="makale-card" data-category="icra-iflas ceza-hukuku tazminat-hukuku">
       <a href="makaleler.html?kategori=icra-iflas" class="makale-tag">İcra ve İflas Hukuku</a>
+      <a href="makaleler.html?kategori=ceza-hukuku" class="makale-tag">Ceza Hukuku</a>
+      <a href="makaleler.html?kategori=tazminat-hukuku" class="makale-tag">Tazminat Hukuku</a>
       <span class="makale-date">Ağustos 2026</span>
-      <h3><a href="makale-12-yargi-paketi.html">12. Yargı Paketi Yürürlükte: İcra ve İflas Kanunu'nda Neler Değişti?</a></h3>
-      <p>7589 sayılı Kanun ile İcra ve İflas Kanunu'nda yapılan değişiklikler ve öne çıkan yenilikler.</p>
+      <h3><a href="makale-12-yargi-paketi.html">12. Yargı Paketi Yürürlükte: Hangi Kanunlarda Neler Değişti?</a></h3>
+      <p>7589 sayılı Kanun ile icra ve iflas, ceza muhakemesi, tazminat ve yargılama usulüne ilişkin kanunlarda yapılan değişiklikler.</p>
     </article>
 
   </div>
@@ -122,7 +124,7 @@
     let visibleCount = 0;
     let label = kategori;
     cards.forEach(card => {
-      if (card.dataset.category === kategori) {
+      if (card.dataset.category.split(' ').includes(kategori)) {
         card.hidden = false;
         visibleCount++;
       } else {

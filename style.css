@@ -227,7 +227,7 @@ section{padding:80px 24px;}
 .makale-tag{
   display:inline-block;font-size:.66rem;letter-spacing:1.2px;text-transform:uppercase;
   color:var(--gold);font-weight:700;background:#fbf7ec;border:1px solid var(--gold-soft);
-  padding:3px 9px;border-radius:2px;margin-bottom:10px;
+  padding:3px 9px;border-radius:2px;margin-bottom:10px;margin-right:6px;
 }
 .makale-date{font-size:.8rem;color:var(--ink-soft);margin-left:10px;}
 .makale-card h3{font-size:1.2rem;margin-bottom:8px;}
