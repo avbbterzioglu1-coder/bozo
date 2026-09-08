@@ -53,13 +53,13 @@ nav a.active{color:var(--gold);}
 }
 .hero-slides{position:absolute;inset:0;z-index:0;background:var(--navy);}
 .hero-slide{
-  position:absolute;inset:0;background-size:contain;background-repeat:no-repeat;background-position:center;
+  position:absolute;inset:0;background-size:cover;background-position:center;
   opacity:0;transition:opacity 2.5s ease-in-out;
 }
 .hero-slide.active{opacity:1;}
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
-  background:linear-gradient(160deg, rgba(17,29,46,0.42), rgba(11,20,32,0.5));
+  background:linear-gradient(160deg, rgba(17,29,46,0.86), rgba(11,20,32,0.9));
 }
 .hero-watermark{
   position:absolute;top:50%;right:-60px;transform:translateY(-50%);
