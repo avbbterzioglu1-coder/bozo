@@ -46,7 +46,7 @@
         <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
         <div>
           <strong>E-posta</strong>
-          <a href="mailto:av.bbterzioglu@gmail.com">av.bbterzioglu@gmail.com</a>
+          <a href="mailto:av.bahadir@terziogluhukuk.com">av.bahadir@terziogluhukuk.com</a>
         </div>
       </div>
       <div class="contact-row">
@@ -86,7 +86,7 @@
         <button type="submit" class="btn btn-primary">Gönder</button>
         <p class="form-status" id="formStatus"></p>
       </form>
-      <p class="form-note">Gönder butonu, mesajınızı e-posta uygulamanız üzerinden av.bbterzioglu@gmail.com adresine iletmenizi sağlar; sitede herhangi bir bilgi saklanmaz.</p>
+      <p class="form-note">Gönder butonu, mesajınızı e-posta uygulamanız üzerinden av.bahadir@terziogluhukuk.com adresine iletmenizi sağlar; sitede herhangi bir bilgi saklanmaz.</p>
     </div>
   </div>
 
@@ -113,7 +113,7 @@
     const message = document.getElementById('message').value.trim();
     const subject = encodeURIComponent('Web Sitesi İletişim Formu - ' + name);
     const body = encodeURIComponent(message + '\n\n---\nGönderen: ' + name + ' (' + email + ')');
-    window.location.href = 'mailto:av.bbterzioglu@gmail.com?subject=' + subject + '&body=' + body;
+    window.location.href = 'mailto:av.bahadir@terziogluhukuk.com?subject=' + subject + '&body=' + body;
     const status = document.getElementById('formStatus');
     status.textContent = 'E-posta uygulamanız açılıyor...';
     status.className = 'form-status ok';
