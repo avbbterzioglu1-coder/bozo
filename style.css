@@ -199,6 +199,18 @@ section{padding:80px 24px;}
 .news-item p{color:var(--ink-soft);font-size:.95rem;}
 
 /* Articles (Makaleler) */
+.category-chips{max-width:760px;margin:0 auto 36px;display:flex;flex-wrap:wrap;gap:10px;}
+.category-chips a{
+  font-size:.82rem;padding:7px 14px;border:1px solid var(--line);border-radius:20px;
+  color:var(--ink-soft);transition:all .2s;
+}
+.category-chips a:hover{border-color:var(--gold);color:var(--navy);}
+.category-chips a.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.makale-filter-bar{
+  max-width:760px;margin:0 auto 20px;display:flex;align-items:center;justify-content:space-between;
+  font-size:.9rem;color:var(--ink-soft);border-bottom:1px solid var(--line);padding-bottom:14px;
+}
+.makale-filter-bar .clear-filter{color:var(--gold);font-weight:600;}
 .makale-list{max-width:760px;margin:0 auto;}
 .makale-card{display:block;border-bottom:1px solid var(--line);padding:28px 0;}
 .makale-card:last-child{border-bottom:none;}

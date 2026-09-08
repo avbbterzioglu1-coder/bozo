@@ -39,23 +39,42 @@
 </section>
 
 <section>
-  <div class="makale-list">
+  <div class="makale-filter-bar" id="filterBar" hidden>
+    <span id="filterLabel"></span>
+    <a href="makaleler.html" class="clear-filter">Tümünü Gör &times;</a>
+  </div>
 
-    <article class="makale-card">
-      <span class="makale-tag">Aile Hukuku</span>
+  <div class="category-chips" id="categoryChips">
+    <a href="makaleler.html?kategori=aile-hukuku" data-cat="aile-hukuku">Aile Hukuku</a>
+    <a href="makaleler.html?kategori=icra-iflas" data-cat="icra-iflas">İcra ve İflas Hukuku</a>
+    <a href="makaleler.html?kategori=ticaret-hukuku" data-cat="ticaret-hukuku">Ticaret Hukuku</a>
+    <a href="makaleler.html?kategori=sirketler-hukuku" data-cat="sirketler-hukuku">Şirketler Hukuku</a>
+    <a href="makaleler.html?kategori=konkordato" data-cat="konkordato">Konkordato</a>
+    <a href="makaleler.html?kategori=is-hukuku" data-cat="is-hukuku">İş ve Sosyal Güvenlik Hukuku</a>
+    <a href="makaleler.html?kategori=tazminat-hukuku" data-cat="tazminat-hukuku">Tazminat Hukuku</a>
+    <a href="makaleler.html?kategori=ceza-hukuku" data-cat="ceza-hukuku">Ceza Hukuku</a>
+    <a href="makaleler.html?kategori=kvkk" data-cat="kvkk">Kişisel Verilerin Korunması Hukuku</a>
+  </div>
+
+  <div class="makale-list" id="makaleList">
+
+    <article class="makale-card" data-category="aile-hukuku">
+      <a href="makaleler.html?kategori=aile-hukuku" class="makale-tag">Aile Hukuku</a>
       <span class="makale-date">Eylül 2026</span>
       <h3><a href="makale-suresiz-nafaka.html">Süresiz Nafaka Kalkıyor: Bundan Sonra Nasıl Olacak?</a></h3>
       <p>Anayasa Mahkemesi'nin süresiz nafaka uygulamasını sona erdiren kararı ve TBMM'nin yapması beklenen yeni düzenleme hakkında bilmeniz gerekenler.</p>
     </article>
 
-    <article class="makale-card">
-      <span class="makale-tag">İcra ve İflas Hukuku</span>
+    <article class="makale-card" data-category="icra-iflas">
+      <a href="makaleler.html?kategori=icra-iflas" class="makale-tag">İcra ve İflas Hukuku</a>
       <span class="makale-date">Eylül 2026</span>
       <h3><a href="makale-cebri-icra-tasarisi.html">İcra ve İflas Hukukunda Reform Süreci: Cebrî İcra Kanunu Taslağı</a></h3>
       <p>Yürürlükteki İcra ve İflas Kanunu'nun yerini alması planlanan yeni taslak ve öne çıkan değişiklikler.</p>
     </article>
 
   </div>
+
+  <p class="news-empty" id="emptyState" hidden>Bu kategoride henüz makale bulunmuyor.</p>
 </section>
 
 <footer>
@@ -70,5 +89,33 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const kategori = params.get('kategori');
+  const cards = document.querySelectorAll('.makale-card');
+  const chips = document.querySelectorAll('#categoryChips a');
+
+  if (kategori) {
+    let visibleCount = 0;
+    let label = kategori;
+    cards.forEach(card => {
+      if (card.dataset.category === kategori) {
+        card.hidden = false;
+        visibleCount++;
+      } else {
+        card.hidden = true;
+      }
+    });
+    chips.forEach(chip => {
+      if (chip.dataset.cat === kategori) {
+        chip.classList.add('active');
+        label = chip.textContent;
+      }
+    });
+    document.getElementById('filterLabel').textContent = 'Kategori: ' + label;
+    document.getElementById('filterBar').hidden = false;
+    document.getElementById('emptyState').hidden = visibleCount > 0;
+  }
+</script>
 </body>
 </html>
