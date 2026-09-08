@@ -96,6 +96,10 @@ section{padding:80px 24px;}
 .about-text .kicker{display:block;}
 .about-text h3{font-size:1.4rem;margin:8px 0 20px;}
 .about-text p{color:var(--ink-soft);margin-bottom:14px;font-size:.98rem;text-align:left;}
+.about-text .signature{
+  text-align:right;margin-top:24px;font-family:'Playfair Display',serif;
+  font-style:italic;color:var(--navy);font-size:1rem;line-height:1.5;
+}
 .rule{width:40px;height:2px;background:var(--gold);margin:0 auto 20px;}
 
 /* Practice areas */
