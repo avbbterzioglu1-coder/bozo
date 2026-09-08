@@ -92,16 +92,15 @@ section{padding:80px 24px;}
 .rule{width:40px;height:2px;background:var(--gold);margin:0 auto 20px;}
 
 /* Practice areas */
-.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);max-width:1080px;margin:0 auto;}
-.area-card{background:var(--white);padding:34px 28px;}
-.area-card.featured{background:#fbf8f2;}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 36px;max-width:1000px;margin:0 auto;}
+.area-card{padding-top:18px;border-top:1px solid var(--line);}
 .area-tag{
   display:inline-block;font-size:.66rem;letter-spacing:1.4px;text-transform:uppercase;
   color:var(--gold);font-weight:700;margin-bottom:12px;
 }
-.area-card h3{font-size:1.15rem;margin-bottom:10px;}
+.area-card h3{font-size:1.1rem;margin-bottom:8px;}
 .area-card p{color:var(--ink-soft);font-size:.92rem;}
-.area-card .more{display:inline-block;margin-top:14px;font-size:.84rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold);}
+.area-card .more{display:inline-block;margin-top:12px;font-size:.84rem;font-weight:600;color:var(--navy);border-bottom:1px solid var(--gold);}
 
 /* Detailed practice area blocks (calisma-alanlari page) */
 .area-detail{
