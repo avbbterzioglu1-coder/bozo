@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://terziogluhukuk.com/</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://terziogluhukuk.com/"/>
@@ -43,6 +43,10 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://terziogluhukuk.com/ru/about.html"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://terziogluhukuk.com/ar/about.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://terziogluhukuk.com/hakkimizda.html"/>
+    <image:image>
+      <image:loc>https://terziogluhukuk.com/assets/av-bahadir-terzioglu.jpg</image:loc>
+      <image:caption>Av. Bahadır Bozkurt Terzioğlu, Kurucu Avukat</image:caption>
+    </image:image>
     <priority>0.8</priority>
   </url>
   <url>
@@ -52,6 +56,10 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://terziogluhukuk.com/ru/about.html"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://terziogluhukuk.com/ar/about.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://terziogluhukuk.com/hakkimizda.html"/>
+    <image:image>
+      <image:loc>https://terziogluhukuk.com/assets/av-bahadir-terzioglu.jpg</image:loc>
+      <image:caption>Attorney Bahadır Bozkurt Terzioğlu, Founding Attorney</image:caption>
+    </image:image>
     <priority>0.8</priority>
   </url>
   <url>
@@ -61,6 +69,10 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://terziogluhukuk.com/ru/about.html"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://terziogluhukuk.com/ar/about.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://terziogluhukuk.com/hakkimizda.html"/>
+    <image:image>
+      <image:loc>https://terziogluhukuk.com/assets/av-bahadir-terzioglu.jpg</image:loc>
+      <image:caption>Адвокат Бахадыр Бозкурт Терзиоглу, Управляющий партнёр</image:caption>
+    </image:image>
     <priority>0.8</priority>
   </url>
   <url>
@@ -70,6 +82,10 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://terziogluhukuk.com/ru/about.html"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://terziogluhukuk.com/ar/about.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://terziogluhukuk.com/hakkimizda.html"/>
+    <image:image>
+      <image:loc>https://terziogluhukuk.com/assets/av-bahadir-terzioglu.jpg</image:loc>
+      <image:caption>المحامي بهادر بوزكورت ترزي أوغلو، المحامي المؤسس</image:caption>
+    </image:image>
     <priority>0.8</priority>
   </url>
   <url>
