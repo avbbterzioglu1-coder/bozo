@@ -244,6 +244,7 @@ section{padding:80px 24px;}
 }
 .category-chips a:hover{border-color:var(--gold);color:var(--navy);}
 .category-chips a.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
+mark.search-hl{background:rgba(255,214,0,0.45);color:inherit;padding:0 1px;border-radius:2px;}
 .article-search-wrap{max-width:340px;margin:0 auto 20px;text-align:center;}
 .article-search-wrap label{
   display:block;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;

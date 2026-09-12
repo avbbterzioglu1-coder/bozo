@@ -168,6 +168,33 @@
   const cards = document.querySelectorAll('.makale-card');
   const select = document.getElementById('categorySelect');
 
+  const searchable = Array.from(cards).map(card => {
+    const titleLink = card.querySelector('h3 a');
+    const desc = card.querySelector('p');
+    return {
+      titleLink, desc,
+      titleText: titleLink ? titleLink.textContent : '',
+      descText: desc ? desc.textContent : ''
+    };
+  });
+
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function highlight(text, query) {
+    if (!query) return text;
+    const re = new RegExp('(' + escapeRegExp(query) + ')', 'gi');
+    return text.replace(re, '<mark class="search-hl">$1</mark>');
+  }
+
+  function updateHighlights(query) {
+    searchable.forEach(({ titleLink, desc, titleText, descText }) => {
+      if (titleLink) titleLink.innerHTML = highlight(titleText, query);
+      if (desc) desc.innerHTML = highlight(descText, query);
+    });
+  }
+
   if (kategori) {
     let visibleCount = 0;
     let label = kategori;
@@ -209,12 +236,15 @@
   }
 
   document.getElementById('articleSearch').addEventListener('input', function () {
-    const q = this.value.trim().toLocaleLowerCase('tr');
+    const rawQ = this.value.trim();
+    const q = rawQ.toLocaleLowerCase('tr');
     if (!q) {
+      updateHighlights('');
       applyCategoryOnly();
       document.getElementById('filterBar').hidden = !kategori;
       return;
     }
+    updateHighlights(rawQ);
     document.getElementById('filterBar').hidden = true;
     let visibleCount = 0;
     cards.forEach(card => {
