@@ -68,19 +68,23 @@
     <a href="articles.html" class="clear-filter">View All &times;</a>
   </div>
 
-  <div class="category-chips" id="categoryChips">
-    <a href="articles.html?category=family-law" data-cat="family-law">Family Law</a>
-    <a href="articles.html?category=enforcement-bankruptcy" data-cat="enforcement-bankruptcy">Enforcement and Bankruptcy Law</a>
-    <a href="articles.html?category=commercial-law" data-cat="commercial-law">Commercial Law</a>
-    <a href="articles.html?category=corporate-law" data-cat="corporate-law">Corporate Law</a>
-    <a href="articles.html?category=contract-law" data-cat="contract-law">Contract Law</a>
-    <a href="articles.html?category=concordat" data-cat="concordat">Concordat</a>
-    <a href="articles.html?category=labor-law" data-cat="labor-law">Labor and Social Security Law</a>
-    <a href="articles.html?category=compensation-law" data-cat="compensation-law">Compensation Law</a>
-    <a href="articles.html?category=administrative-law" data-cat="administrative-law">Administrative Law</a>
-    <a href="articles.html?category=criminal-law" data-cat="criminal-law">Criminal Law</a>
-    <a href="articles.html?category=data-protection" data-cat="data-protection">Data Protection Law</a>
-    <a href="articles.html?category=it-law" data-cat="it-law">Information Technology Law</a>
+  <div class="category-select-wrap">
+    <label for="categorySelect">Filter by Category</label>
+    <select id="categorySelect">
+      <option value="">All Categories</option>
+      <option value="family-law">Family Law</option>
+      <option value="enforcement-bankruptcy">Enforcement and Bankruptcy Law</option>
+      <option value="commercial-law">Commercial Law</option>
+      <option value="corporate-law">Corporate Law</option>
+      <option value="contract-law">Contract Law</option>
+      <option value="concordat">Concordat</option>
+      <option value="labor-law">Labor and Social Security Law</option>
+      <option value="compensation-law">Compensation Law</option>
+      <option value="administrative-law">Administrative Law</option>
+      <option value="criminal-law">Criminal Law</option>
+      <option value="data-protection">Data Protection Law</option>
+      <option value="it-law">Information Technology Law</option>
+    </select>
   </div>
 
   <div class="makale-list" id="makaleList">
@@ -139,7 +143,7 @@
   const params = new URLSearchParams(window.location.search);
   const kategori = params.get('category');
   const cards = document.querySelectorAll('.makale-card');
-  const chips = document.querySelectorAll('#categoryChips a');
+  const select = document.getElementById('categorySelect');
 
   if (kategori) {
     let visibleCount = 0;
@@ -152,16 +156,19 @@
         card.hidden = true;
       }
     });
-    chips.forEach(chip => {
-      if (chip.dataset.cat === kategori) {
-        chip.classList.add('active');
-        label = chip.textContent;
-      }
-    });
+    const opt = select.querySelector('option[value="' + kategori + '"]');
+    if (opt) {
+      select.value = kategori;
+      label = opt.textContent;
+    }
     document.getElementById('filterLabel').textContent = 'Category: ' + label;
     document.getElementById('filterBar').hidden = false;
     document.getElementById('emptyState').hidden = visibleCount > 0;
   }
+
+  select.addEventListener('change', function () {
+    window.location.href = this.value ? 'articles.html?category=' + this.value : 'articles.html';
+  });
 </script>
 
 <footer>

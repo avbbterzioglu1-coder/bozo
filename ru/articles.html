@@ -68,19 +68,23 @@
     <a href="articles.html" class="clear-filter">Показать все &times;</a>
   </div>
 
-  <div class="category-chips" id="categoryChips">
-    <a href="articles.html?category=family-law" data-cat="family-law">Семейное право</a>
-    <a href="articles.html?category=enforcement-bankruptcy" data-cat="enforcement-bankruptcy">Исполнительное и банкротное право</a>
-    <a href="articles.html?category=commercial-law" data-cat="commercial-law">Коммерческое право</a>
-    <a href="articles.html?category=corporate-law" data-cat="corporate-law">Корпоративное право</a>
-    <a href="articles.html?category=contract-law" data-cat="contract-law">Договорное право</a>
-    <a href="articles.html?category=concordat" data-cat="concordat">Конкордат</a>
-    <a href="articles.html?category=labor-law" data-cat="labor-law">Трудовое право и право соцобеспечения</a>
-    <a href="articles.html?category=compensation-law" data-cat="compensation-law">Право возмещения ущерба</a>
-    <a href="articles.html?category=administrative-law" data-cat="administrative-law">Административное право</a>
-    <a href="articles.html?category=criminal-law" data-cat="criminal-law">Уголовное право</a>
-    <a href="articles.html?category=data-protection" data-cat="data-protection">Право защиты персональных данных</a>
-    <a href="articles.html?category=it-law" data-cat="it-law">Информационно-технологическое право</a>
+  <div class="category-select-wrap">
+    <label for="categorySelect">Фильтр по категории</label>
+    <select id="categorySelect">
+      <option value="">Все категории</option>
+      <option value="family-law">Семейное право</option>
+      <option value="enforcement-bankruptcy">Исполнительное и банкротное право</option>
+      <option value="commercial-law">Коммерческое право</option>
+      <option value="corporate-law">Корпоративное право</option>
+      <option value="contract-law">Договорное право</option>
+      <option value="concordat">Конкордат</option>
+      <option value="labor-law">Трудовое право и право соцобеспечения</option>
+      <option value="compensation-law">Право возмещения ущерба</option>
+      <option value="administrative-law">Административное право</option>
+      <option value="criminal-law">Уголовное право</option>
+      <option value="data-protection">Право защиты персональных данных</option>
+      <option value="it-law">Информационно-технологическое право</option>
+    </select>
   </div>
 
   <div class="makale-list" id="makaleList">
@@ -139,7 +143,7 @@
   const params = new URLSearchParams(window.location.search);
   const kategori = params.get('category');
   const cards = document.querySelectorAll('.makale-card');
-  const chips = document.querySelectorAll('#categoryChips a');
+  const select = document.getElementById('categorySelect');
 
   if (kategori) {
     let visibleCount = 0;
@@ -152,16 +156,19 @@
         card.hidden = true;
       }
     });
-    chips.forEach(chip => {
-      if (chip.dataset.cat === kategori) {
-        chip.classList.add('active');
-        label = chip.textContent;
-      }
-    });
+    const opt = select.querySelector('option[value="' + kategori + '"]');
+    if (opt) {
+      select.value = kategori;
+      label = opt.textContent;
+    }
     document.getElementById('filterLabel').textContent = 'Категория: ' + label;
     document.getElementById('filterBar').hidden = false;
     document.getElementById('emptyState').hidden = visibleCount > 0;
   }
+
+  select.addEventListener('change', function () {
+    window.location.href = this.value ? 'articles.html?category=' + this.value : 'articles.html';
+  });
 </script>
 
 <footer>

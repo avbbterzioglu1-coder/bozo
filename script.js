@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[i].classList.remove('active');
       i = (i + 1) % slides.length;
       slides[i].classList.add('active');
-    }, 6000);
+    }, 4000);
   }
+});
+
+// Load the non-visible hero slide backgrounds only after the page has
+// finished its initial load, so the first paint only waits on one image.
+window.addEventListener('load', () => {
+  document.querySelectorAll('.hero-slide[data-bg]').forEach(slide => {
+    slide.style.backgroundImage = "url('" + slide.dataset.bg + "')";
+    slide.removeAttribute('data-bg');
+  });
 });

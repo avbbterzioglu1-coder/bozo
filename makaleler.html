@@ -68,19 +68,23 @@
     <a href="makaleler.html" class="clear-filter">Tümünü Gör &times;</a>
   </div>
 
-  <div class="category-chips" id="categoryChips">
-    <a href="makaleler.html?kategori=aile-hukuku" data-cat="aile-hukuku">Aile Hukuku</a>
-    <a href="makaleler.html?kategori=icra-iflas" data-cat="icra-iflas">İcra ve İflas Hukuku</a>
-    <a href="makaleler.html?kategori=ticaret-hukuku" data-cat="ticaret-hukuku">Ticaret Hukuku</a>
-    <a href="makaleler.html?kategori=sirketler-hukuku" data-cat="sirketler-hukuku">Şirketler Hukuku</a>
-    <a href="makaleler.html?kategori=sozlesmeler-hukuku" data-cat="sozlesmeler-hukuku">Sözleşmeler Hukuku</a>
-    <a href="makaleler.html?kategori=konkordato" data-cat="konkordato">Konkordato</a>
-    <a href="makaleler.html?kategori=is-hukuku" data-cat="is-hukuku">İş ve Sosyal Güvenlik Hukuku</a>
-    <a href="makaleler.html?kategori=tazminat-hukuku" data-cat="tazminat-hukuku">Tazminat Hukuku</a>
-    <a href="makaleler.html?kategori=idare-hukuku" data-cat="idare-hukuku">İdare Hukuku</a>
-    <a href="makaleler.html?kategori=ceza-hukuku" data-cat="ceza-hukuku">Ceza Hukuku</a>
-    <a href="makaleler.html?kategori=kvkk" data-cat="kvkk">Kişisel Verilerin Korunması Hukuku</a>
-    <a href="makaleler.html?kategori=bilisim-teknoloji" data-cat="bilisim-teknoloji">Bilişim ve Teknoloji Hukuku</a>
+  <div class="category-select-wrap">
+    <label for="categorySelect">Kategoriye Göre Filtrele</label>
+    <select id="categorySelect">
+      <option value="">Tüm Kategoriler</option>
+      <option value="aile-hukuku">Aile Hukuku</option>
+      <option value="icra-iflas">İcra ve İflas Hukuku</option>
+      <option value="ticaret-hukuku">Ticaret Hukuku</option>
+      <option value="sirketler-hukuku">Şirketler Hukuku</option>
+      <option value="sozlesmeler-hukuku">Sözleşmeler Hukuku</option>
+      <option value="konkordato">Konkordato</option>
+      <option value="is-hukuku">İş ve Sosyal Güvenlik Hukuku</option>
+      <option value="tazminat-hukuku">Tazminat Hukuku</option>
+      <option value="idare-hukuku">İdare Hukuku</option>
+      <option value="ceza-hukuku">Ceza Hukuku</option>
+      <option value="kvkk">Kişisel Verilerin Korunması Hukuku</option>
+      <option value="bilisim-teknoloji">Bilişim ve Teknoloji Hukuku</option>
+    </select>
   </div>
 
   <div class="makale-list" id="makaleList">
@@ -151,7 +155,7 @@
   const params = new URLSearchParams(window.location.search);
   const kategori = params.get('kategori');
   const cards = document.querySelectorAll('.makale-card');
-  const chips = document.querySelectorAll('#categoryChips a');
+  const select = document.getElementById('categorySelect');
 
   if (kategori) {
     let visibleCount = 0;
@@ -164,16 +168,19 @@
         card.hidden = true;
       }
     });
-    chips.forEach(chip => {
-      if (chip.dataset.cat === kategori) {
-        chip.classList.add('active');
-        label = chip.textContent;
-      }
-    });
+    const opt = select.querySelector('option[value="' + kategori + '"]');
+    if (opt) {
+      select.value = kategori;
+      label = opt.textContent;
+    }
     document.getElementById('filterLabel').textContent = 'Kategori: ' + label;
     document.getElementById('filterBar').hidden = false;
     document.getElementById('emptyState').hidden = visibleCount > 0;
   }
+
+  select.addEventListener('change', function () {
+    window.location.href = this.value ? 'makaleler.html?kategori=' + this.value : 'makaleler.html';
+  });
 </script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f64685f0144c474e9fb9a9c554130add"}'></script>
 </body>
