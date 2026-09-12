@@ -68,6 +68,14 @@
     <a href="makaleler.html" class="clear-filter">Tümünü Gör &times;</a>
   </div>
 
+  <div class="article-search-wrap">
+    <label for="articleSearch">Makalelerde Ara</label>
+    <div class="search-input-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="search" id="articleSearch" placeholder="Örn. kira, nafaka, KVKK...">
+    </div>
+  </div>
+
   <div class="category-select-wrap">
     <label for="categorySelect">Kategoriye Göre Filtrele</label>
     <select id="categorySelect">
@@ -183,6 +191,38 @@
 
   select.addEventListener('change', function () {
     window.location.href = this.value ? 'makaleler.html?kategori=' + this.value : 'makaleler.html';
+  });
+
+  function applyCategoryOnly() {
+    if (kategori) {
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const match = card.dataset.category.split(' ').includes(kategori);
+        card.hidden = !match;
+        if (match) visibleCount++;
+      });
+      document.getElementById('emptyState').hidden = visibleCount > 0;
+    } else {
+      cards.forEach(card => { card.hidden = false; });
+      document.getElementById('emptyState').hidden = true;
+    }
+  }
+
+  document.getElementById('articleSearch').addEventListener('input', function () {
+    const q = this.value.trim().toLocaleLowerCase('tr');
+    if (!q) {
+      applyCategoryOnly();
+      document.getElementById('filterBar').hidden = !kategori;
+      return;
+    }
+    document.getElementById('filterBar').hidden = true;
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const match = card.textContent.toLocaleLowerCase('tr').includes(q);
+      card.hidden = !match;
+      if (match) visibleCount++;
+    });
+    document.getElementById('emptyState').hidden = visibleCount > 0;
   });
 </script>
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "f64685f0144c474e9fb9a9c554130add"}'></script>
