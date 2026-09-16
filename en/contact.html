@@ -77,7 +77,7 @@
         <div class="ic-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
         <div>
           <strong>Email</strong>
-          <a href="mailto:av.bahadir@terziogluhukuk.com">av.bahadir@terziogluhukuk.com</a>
+          <a href="mailto:info@terziogluhukuk.com">info@terziogluhukuk.com</a>
         </div>
       </div>
       <div class="contact-row">
@@ -117,7 +117,7 @@
         <button type="submit" class="btn btn-primary">Send</button>
         <p class="form-status" id="formStatus"></p>
       </form>
-      <p class="form-note">The Send button lets you deliver your message to av.bahadir@terziogluhukuk.com through your own email application; no information is stored on this site.</p>
+      <p class="form-note">The Send button lets you deliver your message to info@terziogluhukuk.com through your own email application; no information is stored on this site.</p>
     </div>
   </div>
 
@@ -132,7 +132,7 @@
     const message = document.getElementById('message').value.trim();
     const subject = encodeURIComponent('Website Contact Form - ' + name);
     const body = encodeURIComponent(message + '\n\n---\nSender: ' + name + ' (' + email + ')');
-    window.location.href = 'mailto:av.bahadir@terziogluhukuk.com?subject=' + subject + '&body=' + body;
+    window.location.href = 'mailto:info@terziogluhukuk.com?subject=' + subject + '&body=' + body;
     const status = document.getElementById('formStatus');
     status.textContent = 'Opening your email application...';
     status.className = 'form-status ok';
